@@ -1,6 +1,6 @@
 import pytest
 from io import BytesIO
-from ci_parser import *
+from ci_msg_parser import *
 from time import strftime
 
 def test_it_fails_on_invalid_message_type():
