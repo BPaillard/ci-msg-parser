@@ -7,6 +7,8 @@ name = "ci-msg-parser"
 version = "0.2.0"
 description = "NSRTW_mk4 MQTT protocol message parser"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENCSE"]
 
 [project.urls]
 Homepage = "https://github.com/BPaillard/ci-msg-parser"
