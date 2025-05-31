@@ -8,6 +8,9 @@ version = "0.2.0"
 description = "NSRTW_mk4 MQTT protocol message parser"
 readme = "README.md"
 
+[project.urls]
+Homepage = "https://github.com/BPaillard/ci-msg-parser"
+
 [project.optional-dependencies]
 dev = ["pytest", "build", "twine"]
 
