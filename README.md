@@ -35,7 +35,7 @@ def on_message(client, userdata, msg):
 	if isinstance(parsed, VitalSignsMessage):
 		print(f"rssi: {parsed.rssi} batt: {parsed.battery_voltage} temp: {parsed.temperature}")
 	if isinstance(parsed, RecordedDataMessage):
-		print(f"values: {parsed.values}")
+		print(f"type: {parsed.message_type} values: {parsed.values}")
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect

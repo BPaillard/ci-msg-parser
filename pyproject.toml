@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ci-msg-parser"
-version = "0.4.0"
+version = "1.0.0"
 description = "NSRTW_mk4 MQTT protocol message parser"
 readme = "README.md"
 license = "MIT"
