@@ -6,11 +6,11 @@ from time import strftime
 def test_it_fails_on_invalid_message_type():
     message = bytes.fromhex('4e53341700000000f231c4e3000000000000000049b08540ac6ce341000074c2')
     with pytest.raises(InvalidMessageTypeException):
-        MessageParser.parse(BytesIO(message))
+        MessageParser.parse(message)
 
 def test_it_parses_vital_signs_messages():
     message = bytes.fromhex('4e5334170a000000f231c4e3000000000000000049b08540ac6ce341000074c2')
-    parsed = MessageParser.parse(BytesIO(message))
+    parsed = MessageParser.parse(message)
 
     assert isinstance(parsed, VitalSignsMessage)
     assert parsed.model is Model.NS4
@@ -23,7 +23,7 @@ def test_it_parses_vital_signs_messages():
 
 def test_it_parses_lmax_messages():
     message = bytes.fromhex('4e5334170b00000010e8211e07000000080080bb01000000003e13000000c801bf01c401cc01c501cd01c601d401c601c501bd01bb01c101cb01cc01be01c601d401c801')
-    parsed = MessageParser.parse(BytesIO(message))
+    parsed = MessageParser.parse(message)
 
     assert isinstance(parsed, RecordedDataMessage)
     assert parsed.message_type == MessageType.LMAX

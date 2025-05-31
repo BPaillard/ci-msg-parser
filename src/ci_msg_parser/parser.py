@@ -72,7 +72,7 @@ class RecordedDataMessage(Message):
 class MessageParser:
     @staticmethod
     def parse(message_bytes):
-        reader = BufferedReader(message_bytes)
+        reader = BufferedReader(BytesIO(message_bytes))
 
         reader.seek(4)
         try:
