@@ -16,5 +16,5 @@ dev = ["pytest", "build", "twine"]
 
 [tool.pytest.ini_options]
 pythonpath = [
-  "src", "src/ci_msg_parser"
+  "src"
 ]
