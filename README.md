@@ -28,14 +28,14 @@ import paho.mqtt.client as mqtt
 from ci_msg_parser import *
 
 def on_connect(client, userdata, flags, reason_code, properties):
-    client.subscribe("#")
+	client.subscribe("#")
 
 def on_message(client, userdata, msg):
-    parsed = MessageParser.parse(msg.payload)
-    if isinstance(parsed, VitalSignsMessage):
-        print(f"rssi: {parsed.rssi} batt: {parsed.battery_voltage} temp: {parsed.temperature}")
+	parsed = MessageParser.parse(msg.payload)
+	if isinstance(parsed, VitalSignsMessage):
+		print(f"rssi: {parsed.rssi} batt: {parsed.battery_voltage} temp: {parsed.temperature}")
 	if isinstance(parsed, RecordedDataMessage):
-	    print(f"values: {parsed.values}")
+		print(f"values: {parsed.values}")
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
